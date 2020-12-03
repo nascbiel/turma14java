@@ -1,0 +1,40 @@
+mini controle de alunos baseado na lista 
+
+nome completo e sexo, criar um codigo para equipe codigo de matricula
+
+cada grupo vai ter um numero
+ 
+*A letra G(8)- numero da lista 
+
+vai de G1- 01
+
+QUANDO O NUMERO É MENOR QUE 10 COLOCA O 0 NA FRENTE
+QUANDO FOR IGUAL OU MAIOR 10 ATE 39 G1-
+
+fazer um vetor da matricula do nome completo e do sexo, 
+se precisar de mais coisas fazer mais vetores
+ 
+criar o codigo que gera a matricula
+
+as mensagens tem que ter ALUNO OU ALUNA 
+
+1- SELECIONAR UM ESTUDANTE E ADICIONAR UMA NOTA DE 1 A 10
+2- INFORMAR SE DEJSA CONTINUAR SIM OU NÃO
+3-SE SIM SELECIONAR NOVO ALUNO PELA MATRICULA E ADICIONAR NOTA DE 1 A 10
+4- QUANDO SELECIONADO NÃO, LIMPA A TELA E MOSTRA A MATRICULA, NOME , SEXO E NOTA DO ALUNO OU ALUNA, DETALHE
+
+SE NOTA ATÉ 5-REPROVADO/REPROVADA [INCLUSIVE](5.1 NAO VALE)
+SE NOTA ACIMA DE 5 E MENOR QUE 8 - RECUPERAÇÃO
+SE NOTA IGUAL OU MAIOR QUE 8 APROVADO/APROVADA
+
+//vetores
+NOMES
+MATRICULAS
+GENEROS
+NOTAS
+
+O que o grupo vai fazer 
+O que
+
+padronizar, definir e tempo
+

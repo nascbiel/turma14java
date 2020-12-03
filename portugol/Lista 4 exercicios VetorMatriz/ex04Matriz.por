@@ -32,9 +32,10 @@ programa
 			para(c=0;c<COLUNA;c++)
 			{
 				soma = mat[l][c]+soma
-				se(mat[l][c]== mat[c][l])
+				se(l == c) //se linha for igual coluna faca a somaDiagonal
 				{
-					somaDiagonal= somaDiagonal + mat[l][c]
+					//somaDiagonal= somaDiagonal + mat[l][c]
+					somaDiagonal += mat[l][c]
 				}
 				
 			}
@@ -60,7 +61,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 764; 
+ * @POSICAO-CURSOR = 686; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
