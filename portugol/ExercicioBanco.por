@@ -35,6 +35,7 @@ programa
 					se(debito>saldo ou debito<0)
 					{
 						escreva("Transação não autorizada")
+						debito=0
 					}
 					senao 
 					{
@@ -55,6 +56,7 @@ programa
 					senao 
 					{
 						escreva("Transação não autorizada")
+						credito=0					
 					}
 				}	
 				escreva("\nO total da transação foi: ",saldo," R$")
@@ -116,7 +118,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1444; 
+ * @POSICAO-CURSOR = 2291; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
