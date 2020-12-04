@@ -1,0 +1,30 @@
+listas 
+1- HOMENS / TODOS OS DADOS = APROVADO E REPROVADO
+2- MULHERES / TODOS OS DADOS = APROVADA E REPROVADA
+3- APROVADOS / APROVADAS
+4- REPROVADOS / REPROVADAS
+5- POR NOTA ACIMA DE: OU ABAIXO DE 
+
+
+
+			//LISTAGEM POR GRUPO 3-4-5-6(NÃO PODE PASSAR DO TAMANHO DA METADEDA SALA)(%)
+
+
+
+
+MATRICULA DO ALUNO / VETOR / INDICE/ MATRICULA 
+SEXO               / VETOR / INDICE / M/F
+NOTA               / VETOR / INDICE
+NOME               / VEOTR / INDICE
+
+sexo
+nomes
+conta 
+
+saldo 0 
+
+bem vindo seu nome vamos começar
+
+qual conta vc deseja? 
+
+dependendo da conta tem dados que precisa ser cadastrados
