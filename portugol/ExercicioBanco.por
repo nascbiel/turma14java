@@ -11,7 +11,7 @@ programa
 		//variaveis
 		const inteiro TAMANHO = 2
 		real vetor[TAMANHO], emprestimoEmpresa=10000.00, credito=0.0, debito=0.0
-		real saldo=0, emprestimo=0.0, saldoTotal=0.0, totalGasto = 0.0, conta=0.0,emprestimoEstudante=1000.00,dinheiroAcumulado=1000.00,creditoSoma, total
+		real saldo=0.0, emprestimo=0.0, saldoTotal=0.0, totalGasto = 0.0, conta=0.0,emprestimoEstudante=1000.00,dinheiroAcumulado=1000.00,creditoSoma, total
 		cadeia alunos [] = {"Allen de Lima Vieira","André de Brito Silva da Costa","Bárbara Liboni Guerra","Beatriz Martins","Beymar Jhoel Acapa Lima",
 		"Breno Nogueira Botelho Noccioli","Daniel Augusto Gomes Ferreira Filho","Danilo Mendes Ferreira","Danilo Pereira da Silva","Davi Silva Vieira",
 		"Diego Vinicio da Silva Nascimento","Erick Costa Ferreira","Ewerton Inacio Lima","FERNANDA AGAPITO","Fernanda Barbosa Ferraz","Francisco José Pires",
@@ -28,9 +28,9 @@ programa
         	inteiro diaAtual
 		caracter acesso, opcao, simNao, menu
 		
-			linha()
-			escreva("\n  SEJA BEM VINDO AO BANCO G8\n")
-			linha()
+			escreva("==================================")
+			escreva("\n    SEJA BEM VINDO AO BANCO G8\n")
+			escreva("==================================\n")
 			escreva("\nO número da conta é: ")
 			leia(conta)
 			escreva("\nSeu saldo atual: 0.00 R$")
@@ -288,7 +288,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7882; 
+ * @POSICAO-CURSOR = 1894; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

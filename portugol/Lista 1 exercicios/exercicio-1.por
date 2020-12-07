@@ -1,33 +1,35 @@
 programa
 {
+	inclua biblioteca Matematica
 	
 	funcao inicio()
 	{
-		inteiro tempoDias
+	//dias = 30
+	//mes = 12
+	//ano = 365
+	
+		inteiro tempoAnos,ano, mes, dia;
 
-		escreva("Digite o tempo em dias: ")
-		leia(tempoDias)
-		escreva("\n")
-		// ano = (tempoDias/365)
-		// mes = (tempoDias%365)/30
-		// dias = (tempoDias%365)%30
+		escreva ("Digite o ano do seu nascimento: ")
+		leia (ano)
+		escreva ("Digite o mês do seu nascimento: ")
+		leia (mes)
+		escreva ("Digite o dia do seu nascimento: ")
+		leia (dia)
 
-		escreva("Ano(s): ",(tempoDias/365)," mes(es): ",((tempoDias%365)/30), " e ",((tempoDias%365)%30)," dias"))
+		tempoAnos = (ano*365)+(mes*30) + dia;
 
-		
-
-
-
-
+		escreva ("Você viveu " + tempoAnos + " dias.")
 		
 	}
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8; 
+ * @POSICAO-CURSOR = 418; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

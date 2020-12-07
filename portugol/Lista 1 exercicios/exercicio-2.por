@@ -3,23 +3,16 @@ programa
 	
 	funcao inicio()
 	{
-		
-	inteiro idadeDias, ano, mes, dia
+		inteiro tempoDias
 
-	escreva("Digite sua idade em dias: ")
-	leia(idadeDias)
+		escreva("Digite o tempo em dias: ")
+		leia(tempoDias)
+		escreva("\n")
+		// ano = (tempoDias/365)
+		// mes = (tempoDias%365)/30
+		// dias = (tempoDias%365)%30
 
-		 ano = (idadeDias/365)
-		 mes = (idadeDias%365)/30
-		 dia = (idadeDias%365)%30
-
-		 escreva(	"Você tem: ",ano," anos, Mês(es): ", mes, " e dias: ", dia," de vida.")
-
-		
-
-
-	
-	
+		escreva("Ano(s): ",(tempoDias/365)," mes(es): ",((tempoDias%365)/30), " e ",((tempoDias%365)%30)," dias"))
 
 		
 	}
@@ -29,7 +22,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 292; 
+ * @POSICAO-CURSOR = 324; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
