@@ -20,7 +20,7 @@ public class ex8 {
 		System.out.println("Digite o custo de fábrica do carro:");
 		custodeFabrica=leia.nextDouble();
 		
-		custoConsumidor=custodeFabrica/(0.45+0.28);
+		custoConsumidor=custodeFabrica*1.73;
 		
 		System.out.println("O custo ao consumidor:"+custoConsumidor);
 		
