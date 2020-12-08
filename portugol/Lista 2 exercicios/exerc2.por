@@ -25,10 +25,7 @@ programa
 	 {	
 	 	se(N > 50){
 	 		E = 20.00 * (N-50)
-	 	
 	 		salario = 10.00 * 50 + E 
-
-
 	 	escreva("O seu salário total: ",salario," e o salário excedente: ",E)
 	 	
 	 	}
@@ -55,7 +52,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 692; 
+ * @POSICAO-CURSOR = 697; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

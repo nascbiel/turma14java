@@ -1,0 +1,56 @@
+loja de algo fisico, paupavel, 10 produtos com 10 itens iniciais 
+de estoque 
+tem que ter a medida kg,litro
+
+10 produtos diferenciados 
+que vão ter 10 de cada produto e a medida dele peça, unidade, kg, litro
+individual
+
+qual produto?
+os dez produtos?
+
+sugestão minha:roupas
+
+escopo:Ubulticário (cosméticos)
+
+1-ORDEM DO PO(PRODUCT OWNER)
+
+[TELA 1]
+
+----------------------------------------------------------
+NOME DA SUA LOJA COMPLETO
+[SLOGAN É AQUI]
+----------------------------------------------------------
+
+[1] - COMPRAR PRODUTOS
+[2] - GERENCIAR ESTOQUE
+[3] - SAIR
+
+DIGITE A OPÇÃO:_
+
+[1]
+NOME DO CLIENTE: _
+GENERO DO CLIENTE [1] Masculino [2] Feminino: _
+
+//conforme o pedaço acima vai fazer o de baixo
+
+Seja bem-vindo / Seja bem-vinda Sr/Sra[nome do cliente]!!!!
+
+
+[2]-SEM AÇÃO SAIR DO PROGRAMA - ESCREVA WIP - TERMINE O PROGRAMA
+
+[3]-ENVIAR MENSAGEM DE DESPEDIDA E SAIR DO PROGRAMA
+
+DEFINIÇÕES:
+
+A LINHA TEM QUE SER UMA FUNÇÃO QUE RECEBE O TAMANHO E EXIBI A LINHA SEM RETORNO(VOID)
+GENERO É UMA FUNÇÃO - ELA RETORNA OU DEFINE CLIENTE MASCULINO OU FEMININO EM TODO PROGRAMA 
+OBG: ESSA FUNÇÃO SE É VOID OU RETORNA VALOR
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+codigo banco em java, menu - DEMANDA 08/12/2020
+qual tipo de conta, nome do cliente, ou sair
+usar função de linha para fazer a linha
