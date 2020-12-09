@@ -9,29 +9,32 @@ public class CadLoja {
 		// TODO Auto-generated method stub
 		Scanner ler = new Scanner(System.in);
 		
-		char menu, genero;
+		char menu, genero,opcao='S';
 		String nome;
 		
+	do 
+	{
 		linha();
 		System.out.println();
 		System.out.println("UBULTICÁRIO");
 		System.out.println("Análise");
 		linha();
 		System.out.println();
-		System.out.println("Digite ");
+		System.out.println("Digite de acordo com o comando ");
 		System.out.println("[1] - COMPRAR PRODUTOS");
 		System.out.println("[2] - GERENCIAR ESTOQUE");
 		System.out.println("[3] - SAIR");
+		System.out.println("DIGITE O COMANDO: ");
 		menu=ler.next().charAt(0);
-	
+		linha();
+		System.out.println();
 		if(menu=='1')
 		{
 		System.out.println("Por favor informe seu nome: ");
 		nome=ler.next().toUpperCase();
-		
 		System.out.println("Digite o genero que você se identifica como: [M]-Masculino [F]-Feminino [O]-Outros :");
 		genero=ler.next().toUpperCase().charAt(0);
-		System.out.println("");
+		System.out.println();
 		if(voltaGenero(genero)=="Masculino") 
 		{
 			System.out.println("Seja bem vindo a nossa loja, senhor "+nome);
@@ -46,23 +49,27 @@ public class CadLoja {
 		}
 		else if(voltaGenero(genero)=="N/D")
 		{
-			System.out.println("Letra digitada errada "+nome);
+			System.out.println("Genero digitado errado, "+nome);
 		}
-		
+		System.out.println("Deseja continuar S/N?");
+		opcao=ler.next().toUpperCase().charAt(0);
 		}
-		
 		else if(menu=='2')
 		{
 			System.out.println("WIP");
+			System.out.println("Deseja continuar S/N?");
+			opcao=ler.next().toUpperCase().charAt(0);
 		}
 		else if(menu=='3')
 		{
-			System.out.println("Volte sempre, adoramos sua visita!!!");
+			opcao='N';
+			break;
 		}
-		
-	
-	
+	}while(opcao=='S');
+	System.out.println("Volte sempre, adoramos sua visita!!!");
+
 	}
+	
 	
 	 public static String voltaGenero (char genero)
 	{
@@ -90,7 +97,7 @@ public class CadLoja {
 	{
 		int valor = 80;
 		for(int x=0;x<valor;x++) {
-			System.out.print("-");
+			System.out.print("=");
 		}
 	}
 	
