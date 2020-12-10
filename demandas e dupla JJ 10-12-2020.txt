@@ -1,0 +1,18 @@
+fazer uma lista de alunos em java, quem é m ou f,
+
+cada aluno precisa de uma matricula-inteiro
+tem que ter vetor que tem todos alunos, dps tem que ter o sexo
+no vetor tem m ou f,
+no programa tem que ter aluno ou aluna
+
+matricula
+nome
+vetor m ou f e na tela aluno ou aluna
+
+
+fazer levantamento de requisitos e levantar informações tecnicas para depois corrigir 
+erros com novas funcionalidades dos requisitos levantados.//JJ
+
+
+
+

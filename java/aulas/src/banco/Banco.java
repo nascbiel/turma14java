@@ -11,7 +11,7 @@ public class Banco {
 		
 		char menu,leiaMenu,genero;
 		String nome;
-		
+			
 		linha();
 		System.out.println();
 		System.out.println("BEM VINDO AO BANCO-G8");
@@ -53,18 +53,12 @@ public class Banco {
 			System.out.println("[4] - para Emprestimo empresa");
 			System.out.println("Digite:");
 			leiaMenu=ler.next().charAt(0);
-			
-			
 		}
 		else if(menu=='2')
 		{
 			System.out.println("Até mais, Volte sempre!!");
 		}
-		
-		
 	}
-	
-
 	public static void linha()
 	{
 		int valor = 80;

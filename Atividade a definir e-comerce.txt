@@ -6,6 +6,11 @@ tem que ter a medida kg,litro
 que vão ter 10 de cada produto e a medida dele peça, unidade, kg, litro
 individual
 
+---------------------------------------------------------------------------
+link planilha:
+https://docs.google.com/spreadsheets/d/1Yu-3t-Zm5xgCCB2morztiKifnATW0P-I-1y-5iWS8M4/edit#gid=814420046
+---------------------------------------------------------------------------
+
 qual produto?
 os dez produtos?
 
@@ -36,8 +41,12 @@ GENERO DO CLIENTE [1] Masculino [2] Feminino: _
 
 Seja bem-vindo / Seja bem-vinda Sr/Sra[nome do cliente]!!!!
 
+CONTINUA S/N?
 
 [2]-SEM AÇÃO SAIR DO PROGRAMA - ESCREVA WIP - TERMINE O PROGRAMA
+
+CONTINUA S/N?
+
 
 [3]-ENVIAR MENSAGEM DE DESPEDIDA E SAIR DO PROGRAMA
 
@@ -46,6 +55,13 @@ DEFINIÇÕES:
 A LINHA TEM QUE SER UMA FUNÇÃO QUE RECEBE O TAMANHO E EXIBI A LINHA SEM RETORNO(VOID)
 GENERO É UMA FUNÇÃO - ELA RETORNA OU DEFINE CLIENTE MASCULINO OU FEMININO EM TODO PROGRAMA 
 OBG: ESSA FUNÇÃO SE É VOID OU RETORNA VALOR
+
+
+1 - O PROGRAMA RODA AO MENOS UMA VEZ [PROGRAMA DO LAÇO WHILE]
+
+2 - A FUNÇÃO DE LINHA TEM QUE RECEBER O TAMANHO DA LINHA COMO PARAMETRO-NÃO É UMA LINHA FIXA
+(PARAMETRO NÃO É DO USUARIO)- USE O LAÇO PARA
+
 
 
 

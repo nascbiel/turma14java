@@ -1,0 +1,5 @@
+cria um vetor carrinho que tem 10 posições
+
+e ele guarda as quantidade
+
+se eu escolhi o produto da posição 1 ele traz 

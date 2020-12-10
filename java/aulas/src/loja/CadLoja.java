@@ -11,6 +11,15 @@ public class CadLoja {
 		
 		char menu, genero,opcao='S';
 		String nome;
+		String codigos[]= new String[10];
+		String produtos[]={"Batom","perfume","shampoo","condicionador","base","delineador","Lápis de olho","primer","sombra paleta","corretivo"};
+		int precoUnitarios[] = {14,140,11,9,18,14,13,16,70,22};	
+		int estoque[] = new int[10];
+		int carrinho[] = new int[10];
+		String escolha;
+		int escolhido=0;
+		
+		
 		
 	do 
 	{
@@ -35,6 +44,8 @@ public class CadLoja {
 		System.out.println("Digite o genero que você se identifica como: [M]-Masculino [F]-Feminino [O]-Outros :");
 		genero=ler.next().toUpperCase().charAt(0);
 		System.out.println();
+		linha();
+		System.out.println();
 		if(voltaGenero(genero)=="Masculino") 
 		{
 			System.out.println("Seja bem vindo a nossa loja, senhor "+nome);
@@ -51,6 +62,29 @@ public class CadLoja {
 		{
 			System.out.println("Genero digitado errado, "+nome);
 		}
+		System.out.println();
+		System.out.printf("\tCÓDIGOS\tPREÇO\t\tESTOQUE\t\tPRODUTOS\n");
+		linha();
+		System.out.println();
+				for(int x=0;x<10;x++)
+				{
+					estoque[x]=10;
+					codigos[x]="UIA 0"+(x+1);
+					System.out.printf("%s\t\t%d R$\t\t%d\t\t%s\n",codigos[x],precoUnitarios[x],estoque[x],produtos[x]);
+				}
+		linha();
+		System.out.println();
+		System.out.println("Digite o código do produto que deseja:");
+		escolha=ler.next().toUpperCase();		
+		/*for (int x=0; x<10; x++)
+			{
+			if (codigos[x].equals(escolha))
+			{
+				escolhido = x;
+			}	
+			}*/
+		System.out.println("Produto escolhido: "+produtos[escolhido]);
+			
 		System.out.println("Deseja continuar S/N?");
 		opcao=ler.next().toUpperCase().charAt(0);
 		}
@@ -66,6 +100,7 @@ public class CadLoja {
 			break;
 		}
 	}while(opcao=='S');
+	
 	System.out.println("Volte sempre, adoramos sua visita!!!");
 
 	}
