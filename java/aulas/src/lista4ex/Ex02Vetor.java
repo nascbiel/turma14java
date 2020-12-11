@@ -25,7 +25,7 @@ public class Ex02Vetor {
 			
 			for (int indice=0;indice<TAMANHO;indice++)
 			{
-				System.out.println("Digite um valor de 1-6");
+				System.out.println("valor de 1-6");
 				lancamentos[indice]=numero.nextInt(6)+1;
 				soma+=lancamentos[indice];		
 			}

@@ -19,8 +19,6 @@ public class CadLoja {
 		String escolha;
 		int escolhido=0;
 		
-		
-		
 	do 
 	{
 		linha();
@@ -104,8 +102,6 @@ public class CadLoja {
 	System.out.println("Volte sempre, adoramos sua visita!!!");
 
 	}
-	
-	
 	 public static String voltaGenero (char genero)
 	{
 		String tipo;
