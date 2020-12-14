@@ -22,6 +22,7 @@ public class BancoEscopo {
 		switch(menu) {
 			case 1:
 				int contaUm = 0, numeroConta, debCred;
+				double emprestimoEmpresa=00.00;
 				double saldo = 0.0, debito = 0.0, credito = 0.0, creditoTotal = 0.0, debitoTotal = 0.0;
 				int conta [] = new int [40]; //contas individuais
 				int tipoConta [] = new int [40]; //1-5
@@ -153,36 +154,8 @@ public class BancoEscopo {
 				}
 				else if(tipoConta[numeroConta] == 4) {
 					linha();
-					System.out.println("\nSUA CONTA É: CONTA EMPRESARIAL");
-					System.out.println("\n");
-					for(int x = 0; x < 10; x++) {
-						System.out.printf("Dia %d \n", x+1);
-						System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
-						System.out.println("QUAL A OPÇÃO DESEJADA?");
-						debCred = ler.nextInt();
-						if(debCred == 1) {
-							System.out.println("QUAL O VALOR?");
-							credito = ler.nextDouble();
-							creditoTotal += credito;
-							System.out.println("SALDO TOTAL: " + creditoTotal);
-							
-						}
-						else if(debCred == 2) {
-							System.out.println("QUAL O VALOR?");
-							debito = ler.nextDouble();
-							debitoTotal = creditoTotal - debito;
-							if(debitoTotal < 0) {
-								System.out.println("\nTRANSAÇÃO INDISPONÍVEL.\n");
-							}
-							else {
-							creditoTotal -= debito;
-							System.out.println("SALDO TOTAL: " + creditoTotal);
-							}
-						}
-						else {
-							System.out.println("VALOR INVÁLIDO.");
-						}
-					}
+					contaEmpresa(emprestimoEmpresa);
+					
 					break;
 				}
 				else if(tipoConta[numeroConta] == 5) {
@@ -256,4 +229,104 @@ public class BancoEscopo {
 			return seuGenero;
 		}
 		//FIM FUNÇAO GENERO
+		//FUNCAO CONTA EMPRESA
+		static double contaEmpresa(double emprestimoEmpresa)
+		{
+			Scanner teclado = new Scanner(System.in);
+			/*
+			 * EMPRESA - EMPRESTIMO [1000 - 10000] - PODE PEDI EMPRESTADO 
+			 * O VALOR A QUALQUER TEMPO, NÃO PODE FICA NEGATIVO. O EMPRESTIMO
+               É SOLICITADO.
+			   O SALDO DO EMPRESTIMO É CORRIGIDO A CADA USO.
+			 */
+			int debCred;
+			double saldo=0.0, emprestimoEmpresaSaldo=10000.00,credito=00.00,creditoTotal=00.00;
+			double debito=00.00,emprestimo=00.00,debitoTotal=00.00;
+			char simNop,menuzin;
+			
+			System.out.println("\nSUA CONTA É: CONTA EMPRESARIAL");
+			System.out.println("\n");
+			for(int x = 0; x < 10; x++) 
+			{
+				System.out.printf("Dia %d \n", x+1);
+			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+			System.out.println("QUAL A OPÇÃO DESEJADA?");
+			debCred = teclado.nextInt();
+			if(debCred == 1) 
+			{
+				System.out.println("QUAL O VALOR?");
+				credito = teclado.nextDouble();
+				System.out.println("O emprestimo da empresa é de: "+emprestimoEmpresaSaldo);
+				System.out.println("Deseja o emprestimo da empresa?");
+				System.out.println("[1] - SIM   /   [2] - NÃO");
+				simNop=teclado.next().charAt(0);
+					if(simNop=='1')
+					{
+							System.out.println("Solicite o valor do emprestimo: ");
+							emprestimo=teclado.nextDouble();
+						if(emprestimo<=emprestimoEmpresaSaldo)
+						{
+							System.out.println("O emprestimo da empresa era de: "+emprestimoEmpresaSaldo);
+							emprestimoEmpresaSaldo -= emprestimo;
+							creditoTotal = credito+emprestimo;
+							System.out.println("O que resta do emprestimo: "+emprestimoEmpresaSaldo);
+							System.out.println("O seu saldo agora é: "+creditoTotal);
+						}
+						else 
+						{
+						System.out.println("Emprestimo solicidado inválido!");
+						}
+					}
+				else if(simNop=='2')
+				{
+					creditoTotal += credito;
+					System.out.println("SALDO TOTAL: " +creditoTotal);
+				}
+			}
+			
+			else if(debCred == 2) 
+			{
+				System.out.println("QUAL O VALOR?");
+				debito = teclado.nextDouble();
+				debitoTotal = creditoTotal - debito;
+				if(debitoTotal < 0) {
+					System.out.println("\nTRANSAÇÃO INDISPONÍVEL.\n");
+				}
+				else 
+				{
+					System.out.println("O emprestimo da empresa era de: "+emprestimoEmpresaSaldo);
+					System.out.println("Deseja o emprestimo da empresa?");
+					System.out.println("[1] - SIM   /   [2] - NÃO");
+					simNop=teclado.next().charAt(0);
+						if(simNop=='1')
+						{
+								System.out.println("Solicite o valor do emprestimo: ");
+								emprestimo=teclado.nextDouble();
+							if(emprestimo<=emprestimoEmpresaSaldo)
+							{
+								System.out.println("O emprestimo da empresa é de: "+emprestimoEmpresaSaldo);
+								emprestimoEmpresaSaldo -= emprestimo;
+								creditoTotal = (creditoTotal+emprestimo)-debito;
+								System.out.println("O que resta do emprestimo: "+emprestimoEmpresaSaldo);
+								System.out.println("O seu saldo agora é: "+creditoTotal);
+							}
+							else 
+							{
+							System.out.println("Emprestimo solicidado inválido!");
+							}
+						}
+						else if(simNop=='2')
+						{
+							creditoTotal -= debito;
+							System.out.println("SALDO TOTAL: " +creditoTotal);
+						}	
+			}
+			}
+			else 
+			{
+				System.out.println("VALOR INVÁLIDO.");
+			}
+			}
+			return creditoTotal;
+		}
 }

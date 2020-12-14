@@ -12,7 +12,6 @@ public class VetorContaEmpresa {
                É SOLICITADO.
 			   O SALDO DO EMPRESTIMO É CORRIGIDO A CADA USO.
 			 */
-		
 			int emprestimo;
 			double saldo=0.0, emprestimoEmpresa=10000.00;
 			char simNop,menuzin;
@@ -23,7 +22,6 @@ public class VetorContaEmpresa {
 			{
 				System.out.println("Solicite o valor do emprestimo: ");
 				emprestimo=teclado.nextInt();
-				
 				if(emprestimo<=emprestimoEmpresa)
 				{
 					System.out.println("O emprestimo da empresa é de: "+emprestimoEmpresa);
@@ -40,7 +38,6 @@ public class VetorContaEmpresa {
 			{
 				System.out.println("CONTINUANDO..");
 			}
-
 		}
 		/*
 		 * escreva("\nSolicite um emprestimo: ")
