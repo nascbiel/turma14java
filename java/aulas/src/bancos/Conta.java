@@ -10,6 +10,12 @@ public abstract class Conta {
 	public Conta(int numeroConta) {
 		this.numeroConta=numeroConta;
 	}
+	
+	public Conta(int numeroConta, String cpf) {
+		super();
+		this.numeroConta = numeroConta;
+		this.cpf = cpf;
+	}
 
 	public int getNumeroConta() {
 		return numeroConta;
@@ -26,6 +32,19 @@ public abstract class Conta {
 		this.cpf = cpf;
 	}
 	
+	
+	public boolean testarSaldo(double valor) 
+	{
+		
+		boolean teste;
+		if (valor <= this.saldo) {
+			teste = true;
+		} else {
+			teste = false;
+		}
+		
+		return teste;
+	}
 	
 	
 	public void debito(double valorDebito) 
