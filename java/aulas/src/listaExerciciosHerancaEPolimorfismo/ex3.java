@@ -18,7 +18,6 @@ public class ex3 {
 			nomes.remove("Pe De Pano");
 			System.out.println("Contém o nome Pe De Pano?"+nomes.contains("Pe De Pano"));
 			System.out.println("Lista de nomes:"+nomes);
-			System.out.println("Lista vazia...");
 			
 		
 		}
