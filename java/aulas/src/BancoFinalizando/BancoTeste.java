@@ -98,7 +98,7 @@ public class BancoTeste {
 	static void movimentacaoPoupanca() {
 		
 		int debCred;
-		double credito = 0, creditoTotal = 0, debito = 0, debitoTotal = 0;
+		double creditoDebito = 0;
 		Scanner leia = new Scanner(System.in);
 		int numeroConta=0; 
 		numeroConta++;
@@ -114,17 +114,15 @@ public class BancoTeste {
 			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
 			System.out.println("QUAL A OPÇÃO DESEJADA?");
 			debCred = leia.nextInt();
+			System.out.println("QUAL O VALOR?");
+			creditoDebito = leia.nextDouble();
 			
 			if(debCred == 1) {
-				System.out.println("QUAL O VALOR?");
-				credito = leia.nextDouble();
-				poupanca.credito(credito);
+				poupanca.credito(creditoDebito);
 			}
 			
 			else if(debCred == 2) {
-				System.out.println("QUAL O VALOR?");
-				debito = leia.nextDouble();
-				poupanca.debito(debito);
+				poupanca.debito(creditoDebito);
 			}
 			
 		}
@@ -147,7 +145,7 @@ public class BancoTeste {
 	static void movimentacaoCorrente() {
 		
 		int debCred;
-		double credito = 0, creditoTotal = 0, debito = 0, debitoTotal = 0;
+		double creditoDebito = 0;
 		Scanner leia = new Scanner(System.in);
 		int talaoDeCheque = 3;
 		int numeroConta = 0;
@@ -164,17 +162,15 @@ public class BancoTeste {
 			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
 			System.out.println("QUAL A OPÇÃO DESEJADA?");
 			debCred = leia.nextInt();
+			System.out.println("QUAL O VALOR?");
+			creditoDebito = leia.nextDouble();
 			
 			if(debCred == 1) {
-				System.out.println("QUAL O VALOR?");
-				credito = leia.nextDouble();
-				corrente.credito(credito);
+				corrente.credito(creditoDebito);
 			}
 			
 			else if(debCred == 2) {
-				System.out.println("QUAL O VALOR?");
-				debito = leia.nextDouble();
-				corrente.debito(debito);
+				corrente.debito(creditoDebito);
 			}
 			
 		}
@@ -188,7 +184,7 @@ public class BancoTeste {
 		static void movimentacaoEspecial() {
 			
 			int debCred;
-			double credito = 0, creditoTotal = 0, debito = 0, debitoTotal = 0;
+			double creditoDebito = 0;
 			Scanner leia = new Scanner(System.in);
 			int numeroConta = 0;
 			
@@ -203,22 +199,21 @@ public class BancoTeste {
 				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
 				debCred = leia.nextInt();
+				System.out.println("QUAL O VALOR?");
+				creditoDebito = leia.nextDouble();
 				
-				if(debCred == 1) {
-					System.out.println("QUAL O VALOR?");
-					credito = leia.nextDouble();
-					especial.credito(credito);
-					especial.testarSaldo(credito);
+				if(debCred == 1) 
+				{
+					especial.credito(creditoDebito);
+					especial.testarSaldo(creditoDebito);
 					especial.registraLimite();
 					especial.devolverLimite();
 					
 				}
-				
-				else if(debCred == 2) {
-					System.out.println("QUAL O VALOR?");
-					debito = leia.nextDouble();
-					especial.debito(debito);
-					especial.testarSaldo(debito);
+				else if(debCred == 2)
+				{
+					especial.debito(creditoDebito);
+					especial.testarSaldo(creditoDebito);
 					especial.registraLimite();
 					especial.devolverLimite();
 				}
@@ -231,9 +226,10 @@ public class BancoTeste {
 		static void movimentacaoEmpresa() {
 			
 			int debCred;
-			double credito = 0, debito = 0, saldo=0;
+			double creditoDebito = 0;
 			Scanner leia = new Scanner(System.in);
 			int numeroConta = 0;
+			char simNao;
 			
 			System.out.println("Digite o seu CPF:");
 			String cpfConta = leia.next();
@@ -246,19 +242,31 @@ public class BancoTeste {
 				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
 				debCred = leia.nextInt();
-				
+				System.out.println("QUAL O VALOR?");
+				creditoDebito = leia.nextDouble();
 				if(debCred == 1) {
-					System.out.println("QUAL O VALOR?");
-					credito = leia.nextDouble();
-					empresa.credito(credito);
-					empresa.emprestar(credito);
+					empresa.credito(creditoDebito);
 				}
-				
 				else if(debCred == 2) {
-					System.out.println("QUAL O VALOR?");
-					debito = leia.nextDouble();
-					empresa.debito(debito);
-					empresa.emprestar(debito);
+					empresa.debito(creditoDebito);
+				}
+				System.out.println("O emprestimo da empresa é "+empresa.getEmprestimoEmpresa());
+				System.out.println("Deseja acessar o emprestimo?");
+				System.out.println("[S] para SIM   /   [N] para NÃO");
+				System.out.println("Digite o comando desejado:");
+				simNao=leia.next().toUpperCase().charAt(0);
+				if(simNao=='S')
+				{
+					System.out.println("Digite o valor de emprestimo:");
+					double valorEmprestimo=leia.nextDouble();
+					empresa.emprestar(valorEmprestimo);
+				}
+				else if(simNao=='N')
+				{
+					System.out.println("Saldo: "+empresa.getSaldo());
+				}
+				else {
+					System.out.println("DIGITO INVÁLIDO");
 				}
 			}	
 		}
@@ -267,9 +275,10 @@ public class BancoTeste {
 		//FUNÇÃO 10 MOVIMENTOS UNIVERSITARIA
 		static void movimentacaoUniversitaria() {			
 			int debCred;
-			double credito = 0, creditoTotal = 0, debito = 0, debitoTotal = 0;
+			double creditoDebito = 0;
 			Scanner leia = new Scanner(System.in);
 			int numeroConta = 0;
+			char simNao;
 						
 			System.out.println("Digite o seu CPF:");
 			String cpfConta = leia.next();
@@ -281,19 +290,35 @@ public class BancoTeste {
 				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
 				debCred = leia.nextInt();
-							
-				if(debCred == 1) {
-					System.out.println("QUAL O VALOR?");
-					credito = leia.nextDouble();
-					universitaria.credito(credito);	
-					universitaria.emprestar(credito);
+				System.out.println("QUAL O VALOR?");
+				creditoDebito = leia.nextDouble();			
+				
+				if(debCred == 1) 
+				{
+					universitaria.credito(creditoDebito);	
+				}		
+				else if(debCred == 2)
+				{
+					universitaria.debito(creditoDebito);
 				}
-						
-				else if(debCred == 2) {
-					System.out.println("QUAL O VALOR?");
-					debito = leia.nextDouble();
-					universitaria.debito(debito);
-					universitaria.emprestar(debito);
+				System.out.println("O emprestimo universitário é "+universitaria.getEmprestimoUniversitario());
+				System.out.println("Deseja acessar o seu emprestimo?");
+				System.out.println("[S] para SIM   /   [N] para NÃO");
+				System.out.println("Digite o comando desejado:");
+				simNao=leia.next().toUpperCase().charAt(0);
+				if(simNao=='S')
+				{
+					System.out.println("Digite o valor de emprestimo:");
+					double valorEmprestimo=leia.nextDouble();
+					universitaria.emprestar(valorEmprestimo);
+				}
+				else if(simNao=='N')
+				{
+					System.out.println("Saldo: "+universitaria.getSaldo());
+				}
+				else 
+				{
+					System.out.println("DIGITO INVÁLIDO");
 				}
 			}
 		}
