@@ -70,24 +70,22 @@ public void setAnoNascimento(int anoNascimento)
 
 public String voltaGenero (char genero)
 	{
-		String tipo;
 		if(genero=='M')
 		{
-			tipo = "BEM VINDO A NOSSA LOJA SENHOR";
+			return "BEM VINDO A NOSSA LOJA SENHOR:";
 		}
 		else if(genero=='F')
 		{
-			tipo = "BEM VINDA A NOSSA LOJA SENHORA";
+			return "BEM VINDA A NOSSA LOJA SENHORA:";
 		}
 		else if(genero=='X')
 		{
-			tipo = "BEM VINDX A NOSSA LOJA SENHORX";
+			return "BEM VINDX A NOSSA LOJA SENHORX:";
 		}	
 		else
 		{
-			tipo = "N/D";
+			return "N/D";
 		}
-		return tipo;
 	}
 	
 	
