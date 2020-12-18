@@ -88,8 +88,14 @@ public class BancoTeste {
 						break;
 					}
 			} 	
+			
+			System.out.println("Voltar para o menu inicial?? [S]/[N]?");
+			saida = leia.next().toUpperCase().charAt(0);
 				
 	} while(saida == 'S');
+		
+		System.out.println("   ||       Obrigado por ultilizar o G8-BANK       ||");
+		System.out.println("   ||       Tenha um bom dia e volte sempre!!      ||");
   }
 	
 	
@@ -111,32 +117,54 @@ public class BancoTeste {
 		
 		for(int x = 0; x < 10; x++) {
 			System.out.printf("Dia %d \n", x+1);
-			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+			System.out.println("Saldo atual: "+poupanca.getSaldo());
+			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO\n[0] - SAIR");
 			System.out.println("QUAL A OPÇÃO DESEJADA?");
 			debCred = leia.nextInt();
-			System.out.println("QUAL O VALOR?");
-			creditoDebito = leia.nextDouble();
 			
 			if(debCred == 1) {
+				System.out.println("QUAL O VALOR?");
+				creditoDebito = leia.nextDouble();
 				poupanca.credito(creditoDebito);
+				System.out.println("Qual o dia de hoje?");
+				int diaDeHoje = leia.nextInt();
+				poupanca.setDataAniversarioConta(dataAniversario);
+
+				if(dataAniversario != diaDeHoje) {
+					System.out.println("Não houveram alterações na conta!");	
+				}
+				
+				else {
+					poupanca.correcaoPoupanca(diaDeHoje);
+				}
 			}
 			
 			else if(debCred == 2) {
+				System.out.println("QUAL O VALOR?");
+				creditoDebito = leia.nextDouble();
 				poupanca.debito(creditoDebito);
+				System.out.println("Qual o dia de hoje?");
+				int diaDeHoje = leia.nextInt();
+				poupanca.setDataAniversarioConta(dataAniversario);
+
+				if(dataAniversario != diaDeHoje) {
+					System.out.println("Não houveram alterações na conta!");	
+				}
+				
+				else {
+					poupanca.correcaoPoupanca(diaDeHoje);
+				}
+			}
+			else if(debCred == 0)
+			{
+				System.out.println("   ||       Obrigado por ultilizar o G8-BANK       ||");
+				System.out.println("   ||       Tenha um bom dia e volte sempre!!      ||");
+				break;
+			}
+			else {
+				System.out.println("digito inválido");
 			}
 			
-		}
-		
-		System.out.println("Qual o dia de hoje?");
-		int diaDeHoje = leia.nextInt();
-		poupanca.setDataAniversarioConta(dataAniversario);
-
-		if(dataAniversario != diaDeHoje) {
-			System.out.println("Não houveram alterações na conta!");	
-		}
-		
-		else {
-			poupanca.correcaoPoupanca(diaDeHoje);
 		}
 	}
 	//FIM FUNÇÃO 10 MOVIMENTOS POUPANCA
@@ -159,7 +187,8 @@ public class BancoTeste {
 		
 		for(int x = 0; x < 10; x++) {
 			System.out.printf("Dia %d \n", x+1);
-			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+			System.out.println("Saldo atual: "+corrente.getSaldo());
+			System.out.println("[1] - CRÉDITO\n[2] - DÉBITO\n[0] - SAIR");
 			System.out.println("QUAL A OPÇÃO DESEJADA?");
 			debCred = leia.nextInt();
 			System.out.println("QUAL O VALOR?");
@@ -171,6 +200,10 @@ public class BancoTeste {
 			
 			else if(debCred == 2) {
 				corrente.debito(creditoDebito);
+			}
+			else if(debCred == 0)
+			{
+				break;
 			}
 			
 		}
@@ -196,14 +229,14 @@ public class BancoTeste {
 			
 			for(int x = 0; x < 10; x++) {
 				System.out.printf("Dia %d \n", x+1);
-				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+				System.out.println("Saldo atual: "+especial.getSaldo());
+				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO\n[0] - SAIR");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
-				debCred = leia.nextInt();
-				System.out.println("QUAL O VALOR?");
-				creditoDebito = leia.nextDouble();
-				
+				debCred = leia.nextInt();	
 				if(debCred == 1) 
 				{
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();
 					especial.credito(creditoDebito);
 					especial.testarSaldo(creditoDebito);
 					especial.registraLimite();
@@ -212,10 +245,19 @@ public class BancoTeste {
 				}
 				else if(debCred == 2)
 				{
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();
 					especial.debito(creditoDebito);
 					especial.testarSaldo(creditoDebito);
 					especial.registraLimite();
 					especial.devolverLimite();
+				}
+				else if(debCred == 0)
+				{
+					break;
+				}
+				else {
+					System.out.println("digito invalido");
 				}
 				
 			}	
@@ -239,34 +281,63 @@ public class BancoTeste {
 			
 			for(int x = 0; x < 10; x++) {
 				System.out.printf("Dia %d \n", x+1);
-				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+				System.out.println("Saldo atual: "+empresa.getSaldo());
+				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO\n[0] - SAIR");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
 				debCred = leia.nextInt();
-				System.out.println("QUAL O VALOR?");
-				creditoDebito = leia.nextDouble();
+				
 				if(debCred == 1) {
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();
 					empresa.credito(creditoDebito);
+					System.out.println("O emprestimo da empresa é "+empresa.getEmprestimoEmpresa());
+					System.out.println("Deseja acessar o emprestimo?");
+					System.out.println("[S] para SIM   /   [N] para NÃO");
+					System.out.println("Digite o comando desejado:");
+					simNao=leia.next().toUpperCase().charAt(0);
+					if(simNao=='S')
+					{
+						System.out.println("Digite o valor de emprestimo:");
+						double valorEmprestimo=leia.nextDouble();
+						empresa.emprestar(valorEmprestimo);
+					}
+					else if(simNao=='N')
+					{
+						System.out.println("Saldo: "+empresa.getSaldo());
+					}
+					else {
+						System.out.println("DIGITO INVÁLIDO");
+					}
 				}
 				else if(debCred == 2) {
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();
 					empresa.debito(creditoDebito);
+					System.out.println("O emprestimo da empresa é "+empresa.getEmprestimoEmpresa());
+					System.out.println("Deseja acessar o emprestimo?");
+					System.out.println("[S] para SIM   /   [N] para NÃO");
+					System.out.println("Digite o comando desejado:");
+					simNao=leia.next().toUpperCase().charAt(0);
+					if(simNao=='S')
+					{
+						System.out.println("Digite o valor de emprestimo:");
+						double valorEmprestimo=leia.nextDouble();
+						empresa.emprestar(valorEmprestimo);
+					}
+					else if(simNao=='N')
+					{
+						System.out.println("Saldo: "+empresa.getSaldo());
+					}
+					else {
+						System.out.println("DIGITO INVÁLIDO");
+					}
 				}
-				System.out.println("O emprestimo da empresa é "+empresa.getEmprestimoEmpresa());
-				System.out.println("Deseja acessar o emprestimo?");
-				System.out.println("[S] para SIM   /   [N] para NÃO");
-				System.out.println("Digite o comando desejado:");
-				simNao=leia.next().toUpperCase().charAt(0);
-				if(simNao=='S')
+				else if(debCred == 0)
 				{
-					System.out.println("Digite o valor de emprestimo:");
-					double valorEmprestimo=leia.nextDouble();
-					empresa.emprestar(valorEmprestimo);
-				}
-				else if(simNao=='N')
-				{
-					System.out.println("Saldo: "+empresa.getSaldo());
+					break;
 				}
 				else {
-					System.out.println("DIGITO INVÁLIDO");
+					System.out.println("digito inválido");
 				}
 			}	
 		}
@@ -283,42 +354,70 @@ public class BancoTeste {
 			System.out.println("Digite o seu CPF:");
 			String cpfConta = leia.next();
 						
-			ContaUniversitaria universitaria = new ContaUniversitaria(numeroConta, 10000);
-						
+			ContaUniversitaria universitaria = new ContaUniversitaria(numeroConta, 10000);		
 			for(int x = 0; x < 10; x++) {
 				System.out.printf("Dia %d \n", x+1);
-				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+				System.out.println("Saldo atual: "+universitaria.getSaldo());
+				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO\n[0] - SAIR");
 				System.out.println("QUAL A OPÇÃO DESEJADA?");
 				debCred = leia.nextInt();
-				System.out.println("QUAL O VALOR?");
-				creditoDebito = leia.nextDouble();			
 				
 				if(debCred == 1) 
 				{
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();	
 					universitaria.credito(creditoDebito);	
+					System.out.println("O emprestimo universitário é "+universitaria.getEmprestimoUniversitario());
+					System.out.println("Deseja acessar o seu emprestimo?");
+					System.out.println("[S] para SIM   /   [N] para NÃO");
+					System.out.println("Digite o comando desejado:");
+					simNao=leia.next().toUpperCase().charAt(0);
+					if(simNao=='S')
+					{
+						System.out.println("Digite o valor de emprestimo:");
+						double valorEmprestimo=leia.nextDouble();
+						universitaria.emprestar(valorEmprestimo);
+					}
+					else if(simNao=='N')
+					{
+						System.out.println("Saldo: "+universitaria.getSaldo());
+					}
+					else 
+					{
+						System.out.println("DIGITO INVÁLIDO");
+					}
 				}		
 				else if(debCred == 2)
 				{
+					System.out.println("QUAL O VALOR?");
+					creditoDebito = leia.nextDouble();	
 					universitaria.debito(creditoDebito);
+					System.out.println("O emprestimo universitário é "+universitaria.getEmprestimoUniversitario());
+					System.out.println("Deseja acessar o seu emprestimo?");
+					System.out.println("[S] para SIM   /   [N] para NÃO");
+					System.out.println("Digite o comando desejado:");
+					simNao=leia.next().toUpperCase().charAt(0);
+					if(simNao=='S')
+					{
+						System.out.println("Digite o valor de emprestimo:");
+						double valorEmprestimo=leia.nextDouble();
+						universitaria.emprestar(valorEmprestimo);
+					}
+					else if(simNao=='N')
+					{
+						System.out.println("Saldo: "+universitaria.getSaldo());
+					}
+					else 
+					{
+						System.out.println("DIGITO INVÁLIDO");
+					}
 				}
-				System.out.println("O emprestimo universitário é "+universitaria.getEmprestimoUniversitario());
-				System.out.println("Deseja acessar o seu emprestimo?");
-				System.out.println("[S] para SIM   /   [N] para NÃO");
-				System.out.println("Digite o comando desejado:");
-				simNao=leia.next().toUpperCase().charAt(0);
-				if(simNao=='S')
+				else if(debCred == 0)
 				{
-					System.out.println("Digite o valor de emprestimo:");
-					double valorEmprestimo=leia.nextDouble();
-					universitaria.emprestar(valorEmprestimo);
+					break;
 				}
-				else if(simNao=='N')
-				{
-					System.out.println("Saldo: "+universitaria.getSaldo());
-				}
-				else 
-				{
-					System.out.println("DIGITO INVÁLIDO");
+				else {
+					System.out.println("digito invalido");
 				}
 			}
 		}

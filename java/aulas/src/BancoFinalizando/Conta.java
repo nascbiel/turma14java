@@ -60,8 +60,15 @@ public abstract class Conta
 		
 		public void credito (double valorCredito) 
 		{
+			if(valorCredito<=0)
+			{
+				System.out.println("Você não pode creditar negativo ou zero");
+			}
+			else {
 			this.setSaldo(this.getSaldo() + valorCredito);
 			System.out.println("SALDO TOTAL: R$ " + this.getSaldo());
+			}
+		
 		}
 		
 		public boolean testarSaldo(double valor) 
